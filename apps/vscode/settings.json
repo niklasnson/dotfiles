@@ -1,0 +1,74 @@
+{
+    // Bugfixing
+    "keyboard.dispatch": "keyCode",
+    // Editor font settings
+    "editor.fontFamily": "'Fira Code', Consolas, ‘Courier New’, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 11,
+    "editor.fontWeight": "600",
+    // Editor format settings
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    // Editor line settings
+    "editor.lineHeight": 0,
+    "editor.lineNumbers": "on",
+    // Editor disable minimap settings
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "alt",
+    "editor.tabSize": 2,
+    // Editor rulers settings
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "editor.trimAutoWhitespace": true,
+    // Editor cursor settings
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "smooth",
+    // Editor selection settings
+    "editor.selectionHighlight": true,
+    "editor.occurrencesHighlight": true,
+    "editor.matchBrackets": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    // Exporer open editors settings
+    "explorer.openEditors.visible": 0,
+    // Window settings
+    "window.zoomLevel": 0,
+    "window.openFoldersInNewWindow": "on",
+    "window.restoreFullscreen": true,
+    "window.restoreWindows": "all",
+    "window.titleBarStyle": "custom",
+    // CPP Settings
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, ColumnLimit: 120, BraceWrapping : {BeforeCatch: true, BeforeElse: true}, BreakBeforeBraces: Custom, AllowAllParametersOfDeclarationOnNextLine: false, BinPackArguments: false, BinPackParameters: false, BreakConstructorInitializersBeforeComma: true, ConstructorInitializerAllOnOneLineOrOnePerLine: false, DerivePointerAlignment: false, PointerAlignment: Left, IndentCaseLabels: true, KeepEmptyLinesAtTheStartOfBlocks: true, AlwaysBreakBeforeMultilineStrings: false }",
+    "C_Cpp.updateChannel": "Insiders",
+    "breadcrumbs.enabled": true,
+    "git.ignoreLegacyWarning": true,
+    "gitlens.advanced.messages": {
+        "suppressGitVersionWarning": true,
+        "suppressLineUncommittedWarning": true
+    },
+    // Workbench settings
+    "workbench.colorTheme": "GitHub Sharp Dark",
+    "workbench.activityBar.visible": true,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.settings.editor": "json",
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showIcons": true,
+    // Disable usage data and errors to be sent to Microsoft.
+    "telemetry.enableTelemetry": false,
+    // Disable crash reports to be sent to Microsoft.
+    "telemetry.enableCrashReporter": false,
+    // Disable autoupdates of extensions
+    "extensions.autoUpdate": false
+}
