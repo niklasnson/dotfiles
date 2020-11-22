@@ -33,6 +33,7 @@ alias gaa="git add --all"
 alias gkg="git clean -fdx"
 alias gpo="git push origin HEAD:refs/drafts/master"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gpm="git push origin master"
 
 # Ruby
 alias rc='bin/rails console'

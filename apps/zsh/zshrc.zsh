@@ -9,6 +9,10 @@ export ARCHFLAGS="-arch x86_64"
 export REPORTTIME=30
 export EDITOR="/usr/local/bin/code"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # sourcing of other files
 source $HOME/.dotfiles/apps/zsh/aliases.zsh
