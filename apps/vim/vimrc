@@ -1,0 +1,193 @@
+"----------------------------------------------------------------------------------------------------------
+"
+"   0. Plugins
+
+    call plug#begin()
+
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'scrooloose/nerdtree'
+    Plug 'ddollar/nerdcommenter'
+    Plug 'tpope/vim-rails'
+    Plug 'preservim/tagbar'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-ragtag'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-test/vim-test'
+    Plug 'tpope/vim-commentary'
+
+    call plug#end()
+
+    " Breif help
+    "
+    " :PlugInstall  - Install plugins
+    " :PlugUpgrade  - Upgrade vim-plug itself
+    " :PlugClean    - Remove unlisted plugin
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   1. OS specific settings
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   2. General congifuration options
+
+    set history=50
+    " Use spaces instead of tabs
+    set expandtab
+    " Be smart when using tabs ;)
+    set smarttab
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+    " Linebreak on 500 characters
+    set lbr
+    set tw=500
+    set ai              " Auto indent
+    set si              " Smart indent
+    set wrap            " Wrap lines
+    set so=7            " Set 7 lines to the cursor - when moving vertically using j/k
+    set number
+    set numberwidth=5
+    set cursorline
+    set autowrite       " Automatically :write before running commands
+    set tags=./tags
+    set autoindent		  " always set autoindenting on
+    set showcmd		      " display incomplete commands
+    " Buffert settings
+    set autoread        " Auto-reload buffers when file changed on disk
+    set nobackup        " Don't use backup files
+    set nowritebackup   " Don't backup the file while editing
+    set noswapfile      " Don't create swapfiles for new buffers
+    " Ignore case when searching
+    set ignorecase
+    " With a map leader it's possible to do extra key combinations
+    " like <leader>w saves the current file
+    let mapleader = ","
+    " Configure backspace so it acts as it should act
+    set backspace=eol,start,indent
+    set whichwrap+=<,>,h,l
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   3. File compatibility and configuration issues
+
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   4. Color, Look&Feel Configuration
+
+    " Enable syntax highlighting
+    syntax enable
+    colorscheme nord
+    " Set the Ruby filetype for a number of common Ruby files without .rb
+    au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
+    " strip trailing whitespace on save
+    autocmd BufWritePre * :%s/\s\+$//e
+    if has("gui_running")
+      set guioptions-=T
+      set guifont=Fira\ Code:h14
+      "set guifont=Fira\ Code\ 14
+    endif
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   5. Modes
+
+    " Visual mode pressing * or # searches for the current selection
+    " Super useful! From an idea by Michael Naumann
+    vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+    vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   6. Plugins and key mappings
+    nnoremap <C-s> :Ag<space>
+    nnoremap <leader>n :NERDTreeFocus<CR>
+    nnoremap <C-n> :NERDTree<CR>
+    nnoremap <C-t> :NERDTreeToggle<CR>
+    nnoremap <C-f> :NERDTreeFind<CR>
+    nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ }
+    nmap <F8> :TagbarToggle<CR>
+    " Vim-Test
+    nmap <silent> <leader>t :TestNearest<CR>
+    nmap <silent> <leader>T :TestFile<CR>
+    nmap <silent> <leader>a :TestSuite<CR>
+    nmap <silent> <leader>l :TestLast<CR>
+    nmap <silent> <leader>g :TestVisit<CR>
+    let test#strategy = "iterm"
+    nnoremap <leader>ev :split $MYVIMRC<cr>
+    nnoremap <leader>sv :source $MYVIMRC<cr>
+    " Git grep visually selected text
+   vnoremap <leader>gg y:Ggrep <c-r>"<cr>
+   " Move a line of text using ALT+[jk] or Command+[jk] on mac (Normal mode)
+   nmap <M-j> mz:m+<cr>`z
+   nmap <M-k> mz:m-2<cr>`z
+   vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+   vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+   if has("mac") || has("macunix")
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
+   endif
+   map <Leader>rt :!ctags -R --languages=ruby,javascript --exclude=vendor --exclude=node_modules --exclude=public --exclude=coverage .<cr><cr>
+   noremap <C-]> <F3>
+"----------------------------------------------------------------------------------------------------------
+"
+"   7. Moving around, bufferts and windows
+
+    " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+    map <space> /
+    map <C-space> ?
+    " Disable highlight when <leader><cr> is pressed
+    map <silent> <leader><cr> :noh<cr>
+    " Smart way to move between windows
+    map <C-j> <C-W>j
+    map <C-k> <C-W>k
+    map <C-h> <C-W>h
+    map <C-l> <C-W>l
+    " Close the current buffer
+    map <leader>bd :Bclose<cr>:tabclose<cr>gT
+    " Close all the buffers
+    map <leader>ba :bufdo bd<cr>
+    map <leader>l :bnext<cr>
+    map <leader>h :bprevious<cr>
+    " Useful mappings for managing tabs
+    map <leader>tn :tabnew<cr>
+    map <leader>to :tabonly<cr>
+    map <leader>tc :tabclose<cr>
+    map <leader>tm :tabmove
+    map <leader>t<leader> :tabnext
+    nnoremap <Leader>b :buffers<CR>:buffer<Space>
+    nnoremap <silent> <C-b> :Buffers<CR>
+    " Open new split panes to right and bottom, which feels more natural
+    set splitbelow
+    set splitright
+
+"----------------------------------------------------------------------------------------------------------
+"
+"   8. gGeneral information
+
+"    Building C-tags
+"    ---------------
+"    https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html
+"
+"    The silver surfer
+"    -----------------
+"    brew install the_silver_searcher
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
+

@@ -4,7 +4,7 @@
     // Editor font settings
     "editor.fontFamily": "'Fira Code', Consolas, ‘Courier New’, monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 11,
+    "editor.fontSize": 12,
     "editor.fontWeight": "600",
     // Editor format settings
     "editor.formatOnPaste": true,
@@ -29,7 +29,6 @@
     // Editor selection settings
     "editor.selectionHighlight": true,
     "editor.occurrencesHighlight": true,
-    "editor.matchBrackets": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -40,7 +39,7 @@
     // Exporer open editors settings
     "explorer.openEditors.visible": 0,
     // Window settings
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1.5682760965896694,
     "window.openFoldersInNewWindow": "on",
     "window.restoreFullscreen": true,
     "window.restoreWindows": "all",
@@ -65,12 +64,9 @@
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": true,
     "workbench.editor.showIcons": true,
-    // Disable usage data and errors to be sent to Microsoft.
-    "telemetry.enableTelemetry": false,
-    // Disable crash reports to be sent to Microsoft.
-    "telemetry.enableCrashReporter": false,
     // Disable autoupdates of extensions
     "extensions.autoUpdate": false,
+    // Better comments settings
     "better-comments.tags": [
         {
             "tag": "!",
@@ -117,5 +113,8 @@
             "bold": false,
             "italic": false
         }
-    ]
+    ],
+    "emmet.includeLanguages": {
+        "erb": "html"
+    }
 }
