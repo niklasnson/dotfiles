@@ -33,6 +33,11 @@
 "
 "   1. OS specific settings
 
+    if has('mac')
+    end
+    if has('linux')
+    end
+
 "----------------------------------------------------------------------------------------------------------
 "
 "   2. General congifuration options
@@ -91,8 +96,12 @@
     autocmd BufWritePre * :%s/\s\+$//e
     if has("gui_running")
       set guioptions-=T
-      set guifont=Fira\ Code:h14
-      "set guifont=Fira\ Code\ 14
+      if has('mac')
+        set guifont=Fira\ Code:h14
+      end
+      if has('linux')
+       set guifont=Fira\ Code\ 11
+      end
     endif
 
 "----------------------------------------------------------------------------------------------------------
@@ -107,6 +116,11 @@
 "----------------------------------------------------------------------------------------------------------
 "
 "   6. Plugins and key mappings
+
+    " Plugin settings
+    let g:ctrlp_custom_ignore = '\v[\/]\.(git|tmp|storage|vendor|node_modules|coverage|log|public)$'
+
+    " Key mappings
     nnoremap <C-s> :Ag<space>
     nnoremap <leader>n :NERDTreeFocus<CR>
     nnoremap <C-n> :NERDTree<CR>
@@ -142,6 +156,22 @@
    endif
    map <Leader>rt :!ctags -R --languages=ruby,javascript --exclude=vendor --exclude=node_modules --exclude=public --exclude=coverage .<cr><cr>
    noremap <C-]> <F3>
+   " Ctrl+h & Ctrl+l cycle between buffers in the current split
+   noremap <silent> <C-h> :bprev<CR>
+   noremap <silent> <C-l> :bnext<CR>
+   " <Leader>q Closes the current buffer
+   nnoremap <silent> <Leader>q :Bclose<CR>
+   " <Leader>Q Closes the current window
+   nnoremap <silent> <Leader>Q <C-w>c
+   "<Leader>Ctrl+q Force Closes the current buffer
+   nnoremap <silent> <Leader><C-q> :Bclose!<CR>
+   nnoremap <Leader>gs :Git<CR>
+   nnoremap <Leader>gr :GRemove<CR>
+   nnoremap <Leader>gl :Gclog<CR>
+   nnoremap <Leader>gb :Git_blame<CR>
+   nnoremap <Leader>gm :GMove
+   vnoremap <Leader>gg :Git
+   nnoremap <Leader>gd :Gdiffsplit<CR>
 "----------------------------------------------------------------------------------------------------------
 "
 "   7. Moving around, bufferts and windows
