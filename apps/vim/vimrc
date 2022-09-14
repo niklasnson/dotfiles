@@ -20,6 +20,10 @@
     Plug 'tpope/vim-surround'
     Plug 'vim-test/vim-test'
     Plug 'tpope/vim-commentary'
+    Plug 'godlygeek/tabular'
+    Plug 'preservim/vim-markdown'
+    Plug 'vim-test/vim-test'
+    Plug 'tpope/vim-commentary'
 
     call plug#end()
 
@@ -31,16 +35,25 @@
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   1. OS specific settings
+"   1. Functions
+
+    function! FormatCodeWithCodestyler()
+      execute 'silent! !/proj/lte_twh/tools/codestyler/latest/bin/codestyler -a %' | edit
+    endfunction
+
+    "----------------------------------------------------------------------------------------------------------
+"
+"   2. OS specific settings
 
     if has('mac')
     end
     if has('linux')
+      nnoremap <silent> <leader>cf :<c-u>call FormatCodeWithCodestyler()<cr>
     end
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   2. General congifuration options
+"   3. General congifuration options
 
     set history=50
     " Use spaces instead of tabs
@@ -80,19 +93,16 @@
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   3. File compatibility and configuration issues
+"   4. File compatibility and configuration issues
 
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   4. Color, Look&Feel Configuration
+"   5. Color, Look&Feel Configuration
 
-    " Enable syntax highlighting
-    syntax enable
+    syntax enable         " enable syntax highlighting
     colorscheme nord
-    " Set the Ruby filetype for a number of common Ruby files without .rb
     au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
-    " strip trailing whitespace on save
     autocmd BufWritePre * :%s/\s\+$//e
     if has("gui_running")
       set guioptions-=T
@@ -106,7 +116,7 @@
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   5. Modes
+"   6. Modes
 
     " Visual mode pressing * or # searches for the current selection
     " Super useful! From an idea by Michael Naumann
@@ -115,7 +125,7 @@
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   6. Plugins and key mappings
+"   7. Plugins and key mappings
 
     " Plugin settings
     let g:ctrlp_custom_ignore = '\v[\/]\.(git|tmp|storage|vendor|node_modules|coverage|log|public)$'
@@ -174,7 +184,7 @@
    nnoremap <Leader>gd :Gdiffsplit<CR>
 "----------------------------------------------------------------------------------------------------------
 "
-"   7. Moving around, bufferts and windows
+"   8. Moving around, bufferts and windows
 
     " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
     map <space> /
@@ -206,7 +216,7 @@
 
 "----------------------------------------------------------------------------------------------------------
 "
-"   8. gGeneral information
+"   9. gGeneral information
 
 "    Building C-tags
 "    ---------------
