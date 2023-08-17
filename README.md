@@ -4,6 +4,10 @@
 
 ### Installating
 
+Install:
+https://github.com/nordtheme/gnome-terminal
+
+
 ```console
 $ make
 ```

@@ -16,7 +16,7 @@ alias 'rm=rm -i'
 alias 'mv=mv -i'
 alias 'cp=cp -i'
 
-# Git 
+# Git
 alias ga="git add"
 alias gaa="git add --all"
 alias gb="git branch"
@@ -50,8 +50,6 @@ alias 'zap=clear; echo -en "\e[3J"'
 
 # Typing errors...
 alias 'cd..=cd ..'
-
-alias ctags="`brew --prefix`/bin/ctags"
 
 # GCC compiler
 set CCFLAGS='-std=c++11 -Wpedantic -Wall -Wextra -Werror'

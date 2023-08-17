@@ -3,16 +3,15 @@ setopt no_beep
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="xiong-chiamiov-plus"
 export UPDATE_ZSH_DAYS=13
-plugins=(z brew git rbenv rake jump)
+plugins=(z rbenv git)
 source $ZSH/oh-my-zsh.sh
-export ARCHFLAGS="-arch x86_64"
+#export ARCHFLAGS="-arch x86_64"
 export REPORTTIME=30
-export EDITOR="/usr/local/bin/code"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export EDITOR="/usr/bin/vim"
+#export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+#export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+#export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # sourcing of other files
 source $HOME/.dotfiles/apps/zsh/aliases.zsh
@@ -27,5 +26,3 @@ export FZF_DEFAULT_OPTS='
 '
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-export PATH="/usr/local/sbin:$PATH"
