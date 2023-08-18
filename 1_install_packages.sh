@@ -1,23 +1,40 @@
-#!/bin/sh
-set -e
+#!/bin/bash
 
-echo "Installing packages"
-echo "==================="
+set -eu -o pipefail # fail on error and report it, debug all lines
 
-sudo apt install make -y
-sudo apt install curl -y
-sudo apt install imagemagick -y
-sudo apt install nodejs -y
-sudo apt install htop -y
-sudo apt install npm -y
-sudo apt install libpq-dev -y
-sudo apt install redis -y
-sudo apt install postgresql postgresql-contrib -y
-sudo apt install rbenv -y
-sudo apt install vim-gtk3 -y
+sudo -n true
 
+echo
+echo Installing packages
+echo ===================
+echo
 
-echo "Post install tasks"
-echo "=================="
+while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
+  make
+  curl
+  imagemagick
+  nodejs
+  htop
+  npm
+  redis
+  postgresql postgresql-contrib
+  libpq-dev
+  rbenv
+  vim-gtk3
+  transmission
+  fonts-firacode
+EOF
+)
+
+echo
+echo Post install tasks
+echo ==================
+echo
+
 sudo -u postgres createuser -s $(whoami)
 sudo apt-get remove apache2
+
+echo
+echo Please reboot and then run "make"
+echo =================================
+echo
