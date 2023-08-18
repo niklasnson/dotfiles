@@ -1,12 +1,18 @@
 # dotfiles
 
 ## About
+```
 
 ### Installating
 
 Install:
 https://github.com/nordtheme/gnome-terminal
 
+```console
+sudo -u postgres createuser -s $(whoami)
+```
+
+sudo apt-get remove apache2
 
 ```console
 $ make

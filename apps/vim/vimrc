@@ -95,6 +95,7 @@
 "
 "   4. File compatibility and configuration issues
 
+    let vim_markdown_folding_disabled = 1
 
 "----------------------------------------------------------------------------------------------------------
 "
