@@ -1,18 +1,24 @@
 # dotfiles
 
 ## About
-```
+My current settings i use for primary Ruby On Rails development on Ubuntu (yes im moving away from Apple).
 
-### Installating
+### Prerequisite
+
+Clone this repo to .dotfiles
 
 Install:
 https://github.com/nordtheme/gnome-terminal
 
+### Installing system
+
 ```console
-sudo -u postgres createuser -s $(whoami)
+$ sudo ./0_install_zsh.sh
 ```
 
-sudo apt-get remove apache2
+```console
+$ sudo ./1_install_packages.sh
+```
 
 ```console
 $ make
