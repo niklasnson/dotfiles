@@ -29,11 +29,9 @@ alias gs="git status"
 alias gaa="git add --all"
 alias gkg="git clean -fdx"
 alias glo="git log --oneline"
-alias gaa="git add --all"
 alias gkg="git clean -fdx"
-alias gpo="git push origin HEAD:refs/drafts/master"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gpm="git push origin master"
+alias gpm="git push origin main"
 
 # Ruby
 alias rc='bin/rails console'
