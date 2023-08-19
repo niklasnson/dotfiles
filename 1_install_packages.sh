@@ -27,12 +27,23 @@ EOF
 )
 
 echo
+echo Installations wih corepack
+echo ==========================
+echo
+
+sudo npm install -g corepack
+corepack enable
+corepack prepare yarn@stable --activate
+
+echo
 echo Post install tasks
 echo ==================
 echo
 
 sudo -u postgres createuser -s $(whoami)
-sudo apt-get remove apache2
+sudo apt autoremove
+
+
 
 echo
 echo Please reboot and then run "make"
