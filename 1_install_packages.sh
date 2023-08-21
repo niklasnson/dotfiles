@@ -23,6 +23,7 @@ while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
   vim-gtk3
   transmission
   fonts-firacode
+  silversearcher-ag
 EOF
 )
 
