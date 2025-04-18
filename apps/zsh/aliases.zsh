@@ -40,11 +40,12 @@ alias 'cp=cp -i'
 # Git
 alias ga="git add"
 alias gaa="git add --all"
-alias gaa="git add --all"
 alias gb="git branch"
 alias gc="git commit"
 alias gca="git commit --amend"
-alias gg="grep"
+alias gcob="git checkout -b"
+alias gcs="git commit -S -m"
+alias gg="git graph"
 alias ggl="git grep --line-number"
 alias gkg="git clean -fdx"
 alias gkg="git clean -fdx"
@@ -53,6 +54,9 @@ alias glo="git log --oneline"
 alias go="git checkout"
 alias gpm="git push origin main"
 alias gs="git status"
+alias gt="git tag"
+alias gu="git reset @ --" #think git unstage
+alias gx="git reset --hard @"
 
 # Ruby
 alias rc='bin/rails console'
