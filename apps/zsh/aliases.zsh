@@ -1,3 +1,24 @@
+#
+#
+#
+#
+#   ▄▄▄       ██▓     ██▓ ▄▄▄        ██████ ▓█████   ██████
+#  ▒████▄    ▓██▒    ▓██▒▒████▄    ▒██    ▒ ▓█   ▀ ▒██    ▒
+#  ▒██  ▀█▄  ▒██░    ▒██▒▒██  ▀█▄  ░ ▓██▄   ▒███   ░ ▓██▄
+#  ░██▄▄▄▄██ ▒██░    ░██░░██▄▄▄▄██   ▒   ██▒▒▓█  ▄   ▒   ██▒
+#   ▓█   ▓██▒░██████▒░██░ ▓█   ▓██▒▒██████▒▒░▒████▒▒██████▒▒
+#   ▒▒   ▓▒█░░ ▒░▓  ░░▓   ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░░░ ▒░ ░▒ ▒▓▒ ▒ ░
+#    ▒   ▒▒ ░░ ░ ▒  ░ ▒ ░  ▒   ▒▒ ░░ ░▒  ░ ░ ░ ░  ░░ ░▒  ░ ░
+#    ░   ▒     ░ ░    ▒ ░  ░   ▒   ░  ░  ░     ░   ░  ░  ░
+#        ░  ░    ░  ░ ░        ░  ░      ░     ░  ░      ░
+#
+# author: cube <cube@domain.dom>
+# code:   https://github.com/niklasnson/dotfiles
+
+
+alias c="clear"
+alias e='$EDITOR'
+
 # Files
 alias aliases='$EDITOR ~/.dotfiles/zsh/aliases'
 alias zshrc='$EDITOR ~/.zshrc' # Quick access to the ~/.zshrc file
@@ -19,19 +40,19 @@ alias 'cp=cp -i'
 # Git
 alias ga="git add"
 alias gaa="git add --all"
+alias gaa="git add --all"
 alias gb="git branch"
 alias gc="git commit"
 alias gca="git commit --amend"
-alias ggl="git grep --line-number"
 alias gg="grep"
-alias go="git checkout"
-alias gs="git status"
-alias gaa="git add --all"
+alias ggl="git grep --line-number"
 alias gkg="git clean -fdx"
-alias glo="git log --oneline"
 alias gkg="git clean -fdx"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glo="git log --oneline"
+alias go="git checkout"
 alias gpm="git push origin main"
+alias gs="git status"
 
 # Ruby
 alias rc='bin/rails console'

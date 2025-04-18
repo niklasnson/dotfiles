@@ -1,3 +1,19 @@
+#
+#  ▒███████▒  ██████  ██░ ██  ██▀███   ▄████▄
+#  ▒ ▒ ▒ ▄▀░▒██    ▒ ▓██░ ██▒▓██ ▒ ██▒▒██▀ ▀█
+#  ░ ▒ ▄▀▒░ ░ ▓██▄   ▒██▀▀██░▓██ ░▄█ ▒▒▓█    ▄
+#    ▄▀▒   ░  ▒   ██▒░▓█ ░██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒
+#  ▒███████▒▒██████▒▒░▓█▒░██▓░██▓ ▒██▒▒ ▓███▀ ░
+#  ░▒▒ ▓░▒░▒▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒░ ▒▓ ░▒▓░░ ░▒ ▒  ░
+#  ░░▒ ▒ ░ ▒░ ░▒  ░ ░ ▒ ░▒░ ░  ░▒ ░ ▒░  ░  ▒
+#  ░ ░ ░ ░ ░░  ░  ░   ░  ░░ ░  ░░   ░ ░
+#    ░ ░          ░   ░  ░  ░   ░     ░ ░
+#  ░                                  ░
+#
+# author: cube <cube@domain.dom>
+# code:   https://github.com/niklasnson/dotfiles
+
+
 setopt noflowcontrol
 setopt no_beep
 export ZSH=~/.oh-my-zsh
@@ -12,6 +28,8 @@ export EDITOR="/usr/bin/vim"
 #export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 #export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 #export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 # sourcing of other files
 source $HOME/.dotfiles/apps/zsh/aliases.zsh
@@ -26,3 +44,40 @@ export FZF_DEFAULT_OPTS='
 '
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# kdesrc-build #################################################################
+
+## Add kdesrc-build to PATH
+export PATH="/home/niklasnson/kde/src/kdesrc-build:$PATH"
+
+## Autocomplete for kdesrc-run
+function _comp_kdesrc_run
+{
+  local cur
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+
+  # Complete only the first argument
+  if [[ $COMP_CWORD != 1 ]]; then
+    return 0
+  fi
+
+  # Retrieve build modules through kdesrc-run
+  # If the exit status indicates failure, set the wordlist empty to avoid
+  # unrelated messages.
+  local modules
+  if ! modules=$(kdesrc-run --list-installed);
+  then
+      modules=""
+  fi
+
+  # Return completions that match the current word
+  COMPREPLY=( $(compgen -W "${modules}" -- "$cur") )
+
+  return 0
+}
+
+## Register autocomplete function
+complete -o nospace -F _comp_kdesrc_run kdesrc-run
+################################################################################
+

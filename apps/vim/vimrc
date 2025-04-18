@@ -144,12 +144,14 @@
       \ }
     nmap <F8> :TagbarToggle<CR>
     " Vim-Test
+
+    let test#strategy = "vimterminal"
+
     nmap <silent> <leader>t :TestNearest<CR>
     nmap <silent> <leader>T :TestFile<CR>
     nmap <silent> <leader>a :TestSuite<CR>
-    nmap <silent> <leader>l :TestLast<CR>
+    nmap <silent> <leader>l :TestLast<CR
     nmap <silent> <leader>g :TestVisit<CR>
-    let test#strategy = "iterm"
     nnoremap <leader>ev :split $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
     " Git grep visually selected text
