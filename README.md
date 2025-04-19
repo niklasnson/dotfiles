@@ -17,7 +17,7 @@
 # dotfiles
 
 ## About
-My current settings i use for primary Ruby On Rails development on Ubuntu (yes im moving away from Apple).
+My current settings i use for primary Ruby On Rails/C++ development on a Ubuntu system.
 
 ### Prerequisite
 
@@ -29,17 +29,20 @@ https://github.com/nordtheme/gnome-terminal
 ### Installing system
 
 ```console
-$ sudo ./0_install_zsh.sh
+$ sudo ./setup/install.sh
 ```
-
-```console
-$ sudo ./1_install_packages.sh
-```
+This will install applications and tools to the system.
 
 ```console
 $ make
 ```
-This will create symlinks from this repo to your home directory.
+After run make to create the symlinks to user the installed apps.
+
+### Updating system
+
+```console
+$ sudo ./setup/update.sh
+```
 
 # Vim plugins
 
