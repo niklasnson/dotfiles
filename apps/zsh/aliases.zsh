@@ -37,12 +37,17 @@ alias 'rm=rm -i'
 alias 'mv=mv -i'
 alias 'cp=cp -i'
 
+alias 'resource=source ~/.zshrc; echo "- Zsh configuration reloaded."' # reload zshrc
+
 # Git
 alias ga="git add"
 alias gaa="git add --all"
 alias gb="git branch"
 alias gc="git commit"
-alias gca="git commit --amend"
+alias gca="git commit --amend" # after ammend you must push with --force
+alias gcb="git checkout -b"
+alias gco="git checkout"
+alias gcm="git commit -m"
 alias gcob="git checkout -b"
 alias gcs="git commit -S -m"
 alias gg="git graph"
