@@ -20,7 +20,7 @@
 # dotfiles
 
 ## About
-My current settings i use for primary Ruby On Rails/C++ development on a Ubuntu system.
+Here is my current seetings for vim, bash and other tools. Please note that it is designed for my perosnal preferences.
 
 ### Prerequisite
 
