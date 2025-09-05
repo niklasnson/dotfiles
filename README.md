@@ -20,7 +20,7 @@
 # dotfiles
 
 ## About
-Here is my current seetings for vim, bash and other tools. Please note that it is designed for my perosnal preferences.
+Here is my current seetings for vim, bash and other tools. Please note that it is designed for my personal preferences and it is not ment as a general preferences.
 
 ### Prerequisite
 
