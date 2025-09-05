@@ -41,6 +41,24 @@
       execute 'silent! !/proj/lte_twh/tools/codestyler/latest/bin/codestyler -a %' | edit
     endfunction
 
+    function! VisualSelection(direction, extra_filter) range
+      let l:saved_reg = @"
+      execute "normal! vgvy"
+
+      let l:pattern = escape(@", "\\/.*'$^~[]")
+      let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+      if a:direction == 'gv'
+          call CmdLine("Ack '" . l:pattern . "' " )
+      elseif a:direction == 'replace'
+          call CmdLine("%s" . '/'. l:pattern . '/')
+      endif
+
+      let @/ = l:pattern
+      let @" = l:saved_reg
+    endfunction
+
+
     "----------------------------------------------------------------------------------------------------------
 "
 "   2. OS specific settings
@@ -105,13 +123,15 @@
     colorscheme nord
     au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
     autocmd BufWritePre * :%s/\s\+$//e
+
+    " Settings for gvim
     if has("gui_running")
       set guioptions-=T
       if has('mac')
         set guifont=Fira\ Code:h14
       end
       if has('linux')
-       set guifont=Fira\ Code\ 10
+       set guifont=Fira\ Code\ 12
       end
     endif
 

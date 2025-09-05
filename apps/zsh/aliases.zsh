@@ -20,7 +20,7 @@ alias c="clear"
 alias e='$EDITOR'
 
 # Files
-alias aliases='$EDITOR ~/.dotfiles/zsh/aliases'
+alias aliases='$EDITOR ~/.dotfiles/apps/zsh/aliases.zsh'
 alias zshrc='$EDITOR ~/.zshrc' # Quick access to the ~/.zshrc file
 
 # Unix
@@ -46,8 +46,8 @@ alias gb="git branch"
 alias gc="git commit"
 alias gca="git commit --amend" # after ammend you must push with --force
 alias gcb="git checkout -b"
-alias gco="git checkout"
 alias gcm="git commit -m"
+alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcs="git commit -S -m"
 alias gg="git graph"
@@ -57,6 +57,7 @@ alias gkg="git clean -fdx"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glo="git log --oneline"
 alias go="git checkout"
+alias gp="git push"
 alias gpm="git push origin main"
 alias gs="git status"
 alias gt="git tag"
