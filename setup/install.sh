@@ -37,13 +37,10 @@ while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
   stow
   tar
   tcpdump
-  toilet
-  traceroute
-  transmission
+  tmux
   tree
   tzdata
   vim-gtk3
-  whiptail
   xz-utils
   zsh-syntax-highlighting
 EOF

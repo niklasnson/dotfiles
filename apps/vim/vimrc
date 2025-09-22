@@ -131,7 +131,7 @@
         set guifont=Fira\ Code:h14
       end
       if has('linux')
-       set guifont=Fira\ Code\ 12
+       set guifont=Fira\ Code\ 10
       end
     endif
 

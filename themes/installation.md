@@ -1,5 +1,9 @@
 # Install Nordic Theme
 
+###
+
+Install GNOME Tweaks fom App Center
+
 ### Unpacking
 
 ```

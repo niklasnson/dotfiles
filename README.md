@@ -27,7 +27,7 @@ Here is my current seetings for vim, bash and other tools. Please note that it i
 Clone this repo to .dotfiles
 
 Install:
-https://github.com/nordtheme/gnome-terminal
+* https://github.com/nordtheme/gnome-terminal
 
 ### Installing system
 
@@ -40,6 +40,25 @@ This will install applications and tools to the system.
 $ make
 ```
 After run make to create the symlinks to user the installed apps.
+
+##### Postinstallation.
+
+__Install Plug__
+```console
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+__Install oh-my-zshell__
+```console
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+$ rbenv install -l
+rbenv global 3.1.2
+$
+
+[https://github.com/nordtheme/gnome-terminal](Nord for gnome terminal)
 
 ### Updating system
 
