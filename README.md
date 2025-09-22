@@ -58,7 +58,11 @@ $ rbenv install -l
 rbenv global 3.1.2
 $
 
-[https://github.com/nordtheme/gnome-terminal](Nord for gnome terminal)
+
+#### App Center
+* VLC
+* Evolution
+
 
 ### Updating system
 
