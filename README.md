@@ -60,9 +60,13 @@ $ rbenv install -l
 $ rbenv global 3.1.2
 ```
 
-
+#### Scripts
+* install.sh - install the system.
+* links.sh - setup all folders and links to files. you can run command with: `make run`.
+* projects.sh - setup folders for my projects.
 
 #### App Center
+Install the following apps in App Center
 * VLC
 * Evolution
 * Telegram
