@@ -54,14 +54,18 @@ __Install oh-my-zshell__
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+__Ruby with Rbenv__
+```console
 $ rbenv install -l
-rbenv global 3.1.2
-$
+$ rbenv global 3.1.2
+```
+
 
 
 #### App Center
 * VLC
 * Evolution
+* Telegram
 
 
 ### Updating system
