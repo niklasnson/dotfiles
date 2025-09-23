@@ -41,7 +41,7 @@ $ make
 ```
 After run make to create the symlinks to user the installed apps.
 
-##### Postinstallation.
+### Postinstallation.
 
 __Install Plug__
 ```console
