@@ -43,6 +43,7 @@ while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
   vim-gtk3
   xz-utils
   zsh-syntax-highlighting
+  xsel
 EOF
 )
 

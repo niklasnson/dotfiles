@@ -59,7 +59,7 @@ __Ruby with Rbenv__
 $ rbenv install -l
 $ rbenv global 3.1.2
 ```
-
+
 #### Scripts
 * install.sh - install the system.
 * links.sh - setup all folders and links to files. you can run command with: `make run`.
