@@ -1,7 +1,5 @@
 # zshrc
-if ! [ -f ~/.zshrc ]; then
-  ln -fn ~/.dotfiles/apps/zsh/zshrc.zsh ~/.zshrc
-fi
+ln -fn ~/.dotfiles/apps/zsh/zshrc.zsh ~/.zshrc
 
 # vim
 if [ ! -d ~/.vim/ ]; then
@@ -30,5 +28,5 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 fi
 
 if [ ! -f ~/.tmux.conf ]; then
-  ln -fn ~/.dotfiles/apps/tmux/tmux.conf $(HOME)/.tmux.conf
+  ln -fn ~/.dotfiles/apps/tmux/tmux.conf ~/.tmux.conf
 fi
