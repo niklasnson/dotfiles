@@ -15,7 +15,7 @@
 
 
 ### Logs
-
+20251118 Minor updates.
 
 ### Icons
 Snap not using the correct icon.

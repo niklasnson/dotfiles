@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# user vars
-
-# script vars
-
 # helper functions
 function _echo() { echo -e "\n╓───── $1 \n╙────────────────────────────────────── ─ ─ \n" ""; }
 
@@ -13,8 +9,8 @@ function _echo() { echo -e "\n╓───── $1 \n╙───────�
 }
 
 # install all the things \o/
-_echo "Updating packages"
-add-apt-repository ppa:solaar-unifying/stable -y
+_echo "updating packages"
+sudo add-apt-repository ppa:solaar-unifying/stable -y
 apt update -y && apt upgrade -y
 
 _echo "Installing packages"
