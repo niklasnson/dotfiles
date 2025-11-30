@@ -17,7 +17,6 @@ function _ask() {
   esac
 }
 
-
 [ "$(id -u)" -ne 0 ] && {
 	_echo "got root?" >&2
 	exit 1
@@ -53,6 +52,7 @@ while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
   vim-gtk3
   xz-utils
   zsh-syntax-highlighting
+  xnview
   xsel
 EOF
 )

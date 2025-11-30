@@ -34,7 +34,7 @@ Install:
 ```console
 $ sudo ./setup/install.sh
 ```
-This will install applications and tools to the system.
+This will install applications and tools to the system. You will be asked if you want to install some additional packes.
 
 ```console
 $ make
