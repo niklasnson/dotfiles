@@ -3,6 +3,21 @@
 # helper functions
 function _echo() { echo -e "\n╓───── $1 \n╙────────────────────────────────────── ─ ─ \n" ""; }
 
+# optional install function
+function _ask() {
+  read -p "Do you want to install '$1'? [y/n] " yn
+
+  case $yn in
+    [yY] )
+      sudo apt install -y $1;;
+    [nN] )
+      echo " Skipping '$1'";;
+    * )
+      echo "Invalid response";;
+  esac
+}
+
+
 [ "$(id -u)" -ne 0 ] && {
 	_echo "got root?" >&2
 	exit 1
@@ -24,15 +39,12 @@ while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
   make
   nodejs
   npm
-  postgresql postgresql-contrib
   rbenv
-  redis
   rsyslog
   secure-delete
   silversearcher-ag
   socat
   stow
-  solaar
   tar
   tcpdump
   tmux
@@ -44,6 +56,12 @@ while read -r p ; do sudo apt install -y $p ; done < <(cat << "EOF"
   xsel
 EOF
 )
+
+_echo "Installting optional packages"
+_ask postgresql
+_ask postgresql-contrib
+_ask solaar
+_ask redis
 
 _echo "Installing corepack packages"
 npm install -g corepack
