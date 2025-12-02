@@ -123,11 +123,10 @@
     augroup vimrc_autocmd
       autocmd!
 
-      " for html/rb files, 2 spaces
       autocmd Filetype html setlocal ts=2 sw=2 expandtab
       autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+      autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
 
-      " for js/coffee/python files, 4 spaces
       autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
       autocmd Filetype coffeescript setlocal ts=4 sw=4 sts=0 expandtab
       autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
@@ -285,8 +284,8 @@
 "    -----------------
 "    brew install the_silver_searcher
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+    " Local config
+    if filereadable($HOME . "/.vimrc.local")
+      source ~/.vimrc.local
+    endif
 
