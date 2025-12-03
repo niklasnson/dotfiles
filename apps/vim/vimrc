@@ -5,25 +5,25 @@
     call plug#begin()
 
     Plug 'arcticicestudio/nord-vim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'vim-ruby/vim-ruby'
-    Plug 'scrooloose/nerdtree'
     Plug 'ddollar/nerdcommenter'
-    Plug 'tpope/vim-rails'
-    Plug 'preservim/tagbar'
+    Plug 'godlygeek/tabular'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'preservim/tagbar'
+    Plug 'preservim/vim-markdown'
+    Plug 'scrooloose/nerdtree'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-ragtag'
+    Plug 'tpope/vim-rails'
     Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-ruby/vim-ruby'
     Plug 'vim-test/vim-test'
-    Plug 'tpope/vim-commentary'
-    Plug 'godlygeek/tabular'
-    Plug 'preservim/vim-markdown'
     Plug 'vim-test/vim-test'
-    Plug 'tpope/vim-commentary'
 
     call plug#end()
 
