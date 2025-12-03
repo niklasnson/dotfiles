@@ -186,10 +186,9 @@
       \ 'file': '\.so$\|\.dat$|\.DS_Store$'
       \ }
     nmap <F8> :TagbarToggle<CR>
+
     " Vim-Test
-
     let test#strategy = "vimterminal"
-
     nmap <silent> <leader>t :TestNearest<CR>
     nmap <silent> <leader>T :TestFile<CR>
     nmap <silent> <leader>a :TestSuite<CR>
