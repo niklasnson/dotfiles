@@ -32,6 +32,7 @@
     " :PlugInstall  - Install plugins
     " :PlugUpgrade  - Upgrade vim-plug itself
     " :PlugClean    - Remove unlisted plugin
+    " :PlugUpdate   - Install or update the plugins
 
 "----------------------------------------------------------------------------------------------------------
 "
