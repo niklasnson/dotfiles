@@ -23,7 +23,6 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-ruby/vim-ruby'
     Plug 'vim-test/vim-test'
-    Plug 'vim-test/vim-test'
 
     call plug#end()
 
@@ -60,21 +59,31 @@
     endfunction
 
 
-    "----------------------------------------------------------------------------------------------------------
+"----------------------------------------------------------------------------------------------------------
 "
 "   2. OS specific settings
 
     if has('mac')
+      " This command will only be executed on a Apple machine
     end
     if has('linux')
-      nnoremap <silent> <leader>cf :<c-u>call FormatCodeWithCodestyler()<cr>
+      " This command will only be executed on a Linux machine
     end
 
 "----------------------------------------------------------------------------------------------------------
 "
 "   3. General congifuration options
 
-    set history=50
+    " Sets how many lines of history VIM has to remember
+    set history=500
+
+    " Enable filetype plugins
+    filetype plugin on
+    filetype indent on
+
+    " Set to auto read when a file is changed from the outside
+    set autoread
+    au FocusGained,BufEnter * silent! checktime
 
     " Use spaces instead of tabs
     set expandtab
@@ -156,6 +165,8 @@
       end
       if has('linux')
        set guifont=Fira\ Code\ 10
+       set lines=92
+       set columns=178
       end
     endif
 
@@ -207,13 +218,11 @@
     vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
     vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
     if has("mac") || has("macunix")
-    nmap <D-j> <M-j>
-    nmap <D-k> <M-k>
-    vmap <D-j> <M-j>
-    vmap <D-k> <M-k>
+      nmap <D-j> <M-j>
+      nmap <D-k> <M-k>
+      vmap <D-j> <M-j>
+      vmap <D-k> <M-k>
     endif
-    map <Leader>rt :!ctags -R --languages=ruby,javascript --exclude=vendor --exclude=node_modules --exclude=public --exclude=coverage .<cr><cr>
-    noremap <C-]> <F3>
 
     " Ctrl+h & Ctrl+l cycle between buffers in the current split
     noremap <silent> <C-h> :bprev<CR>
@@ -275,14 +284,6 @@
 "----------------------------------------------------------------------------------------------------------
 "
 "   9. gGeneral information
-
-"    Building C-tags
-"    ---------------
-"    https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html
-"
-"    The silver surfer
-"    -----------------
-"    brew install the_silver_searcher
 
     " Local config
     if filereadable($HOME . "/.vimrc.local")
