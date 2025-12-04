@@ -94,6 +94,9 @@
     set shiftwidth=2
     set softtabstop=2
 
+    " Set utf8 as standard encoding and en_US as the standard language
+    set encoding=utf8
+
     " Linebreak on 500 characters
     set lbr
     set tw=500
@@ -160,13 +163,16 @@
     " Settings for gvim
     if has("gui_running")
       set guioptions-=T
+      set guioptions-=e
+      set t_Co=256
+      set guitablabel=%M\ %t
+      set lines=92
+      set columns=178
       if has('mac')
         set guifont=Fira\ Code:h14
       end
       if has('linux')
        set guifont=Fira\ Code\ 10
-       set lines=92
-       set columns=178
       end
     endif
 
