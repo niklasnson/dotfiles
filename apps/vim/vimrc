@@ -37,10 +37,6 @@
 "
 "   1. Functions
 
-    function! FormatCodeWithCodestyler()
-      execute 'silent! !/proj/lte_twh/tools/codestyler/latest/bin/codestyler -a %' | edit
-    endfunction
-
     function! VisualSelection(direction, extra_filter) range
       let l:saved_reg = @"
       execute "normal! vgvy"
@@ -57,6 +53,19 @@
       let @/ = l:pattern
       let @" = l:saved_reg
     endfunction
+
+    " Delete trailing white space on save, useful for some filetypes ;)
+    fun! CleanExtraSpaces()
+        let save_cursor = getpos(".")
+        let old_query = getreg('/')
+        silent! %s/\s\+$//e
+        call setpos('.', save_cursor)
+        call setreg('/', old_query)
+    endfun
+
+    if has("autocmd")
+      autocmd BufWritePre *.* :call CleanExtraSpaces()
+    endif
 
 
 "----------------------------------------------------------------------------------------------------------
@@ -144,6 +153,9 @@
       autocmd Filetype coffeescript setlocal ts=4 sw=4 sts=0 expandtab
       autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
     augroup END
+
+    " Pressing ,ss will toggle and untoggle spell checking
+    map <leader>ss :setlocal spell!<cr>
 
 "----------------------------------------------------------------------------------------------------------
 "
